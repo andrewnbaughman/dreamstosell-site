@@ -294,6 +294,20 @@
             color: #000000;
         }
 
+        .form-message {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #999;
+        }
+
+        .form-message.error {
+            color: #ff6b6b;
+        }
+
+        .form-message.success {
+            color: #69db7c;
+        }
+
         /* ── Footer ── */
         footer {
             padding: 50px 0;
@@ -442,11 +456,11 @@
             <h2 class="signup-title">Stay in the loop</h2>
             <p class="signup-subtitle">No spam. Just the stuff that matters — new music, shows, and behind the scenes.</p>
             
-            <!-- EmailOctopus Form - Replace YOUR_FORM_URL with your actual form action URL -->
-            <form class="signup-form" action="YOUR_EMAILOCTOPUS_FORM_URL" method="post">
-                <input type="email" name="email" placeholder="Your email" required>
-                <button type="submit">Subscribe</button>
+            <form class="signup-form" id="email-form">
+                <input type="email" name="email" id="email-input" placeholder="Your email" required>
+                <button type="submit" id="submit-btn">Subscribe</button>
             </form>
+            <p id="form-message" class="form-message" style="display: none;"></p>
         </div>
     </section>
 
@@ -460,6 +474,60 @@
         </div>
         <p class="copyright">© 2025 Dreams to Sell. All rights reserved.</p>
     </footer>
+
+    <script>
+        document.getElementById('email-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email-input').value;
+            const btn = document.getElementById('submit-btn');
+            const msg = document.getElementById('form-message');
+            
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            msg.style.display = 'none';
+            
+            try {
+                const response = await fetch('https://emailoctopus.com/api/1.6/lists/5ab5b91a-0051-11f1-b00b-2bfb2c578948/contacts', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        api_key: 'eo_e557c67ab1854b9acd7e205e54e3930b7657c41b3c2ffb5010dfc04250152c9a',
+                        email_address: email
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    msg.textContent = "You're in. Welcome to the list.";
+                    msg.className = 'form-message success';
+                    msg.style.display = 'block';
+                    document.getElementById('email-input').value = '';
+                    btn.textContent = 'Subscribed';
+                } else {
+                    if (data.error && data.error.code === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
+                        msg.textContent = "You're already on the list.";
+                        msg.className = 'form-message';
+                    } else {
+                        msg.textContent = 'Something went wrong. Try again.';
+                        msg.className = 'form-message error';
+                    }
+                    msg.style.display = 'block';
+                    btn.textContent = 'Subscribe';
+                    btn.disabled = false;
+                }
+            } catch (error) {
+                msg.textContent = 'Something went wrong. Try again.';
+                msg.className = 'form-message error';
+                msg.style.display = 'block';
+                btn.textContent = 'Subscribe';
+                btn.disabled = false;
+            }
+        });
+    </script>
 
 </body>
 </html>
