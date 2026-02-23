@@ -294,49 +294,6 @@
             color: #000000;
         }
 
-        /* ── EmailOctopus Form Overrides ── */
-        .eo-form-container {
-            background: transparent !important;
-        }
-        .eo-form {
-            background: transparent !important;
-            font-family: 'Space Mono', monospace !important;
-        }
-        .eo-form input[type="email"],
-        .eo-form input[type="text"] {
-            background: #111 !important;
-            border: 1px solid #2a2a2a !important;
-            color: #ffffff !important;
-            font-family: 'Space Mono', monospace !important;
-            padding: 16px 20px !important;
-            font-size: 13px !important;
-        }
-        .eo-form input::placeholder {
-            color: #555 !important;
-        }
-        .eo-form button,
-        .eo-form input[type="submit"] {
-            background: transparent !important;
-            border: 1px solid #ffffff !important;
-            color: #ffffff !important;
-            font-family: 'Space Mono', monospace !important;
-            font-size: 11px !important;
-            font-weight: 700 !important;
-            letter-spacing: 3px !important;
-            text-transform: uppercase !important;
-            padding: 16px 35px !important;
-            cursor: pointer !important;
-        }
-        .eo-form button:hover,
-        .eo-form input[type="submit"]:hover {
-            background: #ffffff !important;
-            color: #000000 !important;
-        }
-        .eo-form label {
-            color: #999 !important;
-            font-family: 'Space Mono', monospace !important;
-        }
-
         /* ── Footer ── */
         footer {
             padding: 50px 0;
@@ -485,8 +442,11 @@
             <h2 class="signup-title">Stay in the loop</h2>
             <p class="signup-subtitle">No spam. Just the stuff that matters — new music, shows, and behind the scenes.</p>
             
-            <!-- EmailOctopus Popup Form -->
-            <script async src="https://eocampaign1.com/form/7b8a01c4-1068-11f1-a20f-eb704849c0ba.js" data-form="7b8a01c4-1068-11f1-a20f-eb704849c0ba"></script>
+            <!-- EmailOctopus Form - Replace YOUR_FORM_URL with your actual form action URL -->
+            <form class="signup-form" action="YOUR_EMAILOCTOPUS_FORM_URL" method="post">
+                <input type="email" name="email" placeholder="Your email" required>
+                <button type="submit">Subscribe</button>
+            </form>
         </div>
     </section>
 
