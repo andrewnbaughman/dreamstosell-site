@@ -247,6 +247,11 @@
             color: #333;
         }
 
+        .page-content {
+            min-height: 100vh;
+            padding: 120px 150px 100px;
+        }
+
         @media (max-width: 600px) {
             .main-nav {
                 top: 20px;
@@ -260,6 +265,10 @@
 
             .container {
                 padding: 0 25px;
+            }
+
+            .page-content {
+                padding: 100px 25px 70px;
             }
 
             .hero {
@@ -305,7 +314,7 @@
         <a href="about.html">About</a>
     </nav>
 
-    <section style="min-height: 100vh; padding: 120px 150px 100px;">
+    <section class="page-content">
         <div class="container">
             <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Music</div>
             <div style="border-radius: 12px; overflow: hidden;">
