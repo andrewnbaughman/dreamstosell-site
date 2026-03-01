@@ -157,14 +157,6 @@
         }
 
         .signup-form input[type="email"] {
-            }
-
-            .signup-section {
-                padding: 100px 25px;
-            }
-
-            footer {
-                padding: 40px 25px;
             flex: 1;
             min-width: 250px;
             padding: 16px 20px;
@@ -178,6 +170,14 @@
         }
 
         .signup-form input[type="email"]::placeholder {
+            color: #555;
+        }
+
+        .signup-form input[type="email"]:focus {
+            border-color: #444;
+        }
+
+        .signup-form button {
             color: #555;
         }
 
@@ -272,6 +272,10 @@
                 padding: 140px 25px 70px;
             }
 
+            .page-content .container {
+                padding: 0;
+            }
+
             .hero {
                 padding: 80px 25px 40px;
             }
@@ -304,7 +308,6 @@
 
             footer {
                 padding: 40px 25px;
-                min-width: 100%;
             }
         }
     </style>
