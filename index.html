@@ -63,7 +63,7 @@
         }
 
         .main-nav a {
-            font-size: 11px;
+            font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
             color: #666;
@@ -239,16 +239,100 @@
             color: #333;
         }
 
+        /* ── Hamburger Menu (Mobile Only) ── */
+        .menu-toggle {
+            position: fixed;
+            top: 30px;
+            left: 30px;
+            width: 40px;
+            height: 40px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            z-index: 2000;
+            padding: 0;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background: #ffffff;
+            opacity: 0.4;
+            transition: all 0.3s;
+        }
+
+        .menu-toggle.active span {
+            opacity: 1;
+        }
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(8px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-8px) rotate(-45deg);
+        }
+
+        .menu-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.98);
+            z-index: 1500;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s;
+        }
+
+        .menu-overlay.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .menu-nav {
+            text-align: center;
+        }
+
+        .menu-nav a {
+            display: block;
+            font-size: 15px;
+            font-weight: 400;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin: 30px 0;
+            transition: color 0.3s;
+        }
+
+        .menu-nav a:hover {
+            color: #ffffff;
+        }
+
         @media (max-width: 600px) {
             .main-nav {
-                top: 20px;
-                left: 20px;
-                gap: 12px;
+                display: none;
             }
 
-            .main-nav a {
-                font-size: 9px;
-                letter-spacing: 1px;
+            .menu-toggle {
+                display: flex;
+                top: 20px;
+                left: 20px;
+            }
+
+            .menu-nav a {
+                font-size: 14px;
+                margin: 25px 0;
             }
 
             .container {
@@ -256,7 +340,7 @@
             }
 
             .hero {
-                padding: 120px 25px 40px;
+                padding: 80px 25px 40px;
             }
 
             .logo {
@@ -292,6 +376,24 @@
     </style>
 </head>
 <body>
+
+    <!-- Hamburger Menu Toggle (Mobile Only) -->
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <!-- Menu Overlay (Mobile Only) -->
+    <div class="menu-overlay" id="menu-overlay">
+        <nav class="menu-nav">
+            <a href="index.html" class="menu-link">Home</a>
+            <a href="music.html" class="menu-link">Music</a>
+            <a href="tour.html" class="menu-link">Tour</a>
+            <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
+            <a href="about.html" class="menu-link">About</a>
+        </nav>
+    </div>
 
     <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
@@ -337,6 +439,35 @@
     </footer>
 
     <script>
+        // Hamburger Menu Toggle
+        const menuToggle = document.getElementById('menu-toggle');
+        const menuOverlay = document.getElementById('menu-overlay');
+        const menuLinks = document.querySelectorAll('.menu-link');
+
+        if (menuToggle) {
+            menuToggle.addEventListener('click', function() {
+                menuToggle.classList.toggle('active');
+                menuOverlay.classList.toggle('active');
+            });
+
+            // Close menu when clicking a link
+            menuLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    menuToggle.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                });
+            });
+
+            // Close menu when clicking outside
+            menuOverlay.addEventListener('click', function(e) {
+                if (e.target === menuOverlay) {
+                    menuToggle.classList.remove('active');
+                    menuOverlay.classList.remove('active');
+                }
+            });
+        }
+
+        // Email Signup
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
             
