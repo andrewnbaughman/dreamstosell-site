@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music - Dreams to Sell</title>
+    <meta name="description" content="Dreams to Sell - Music">
+    <link rel="icon" href="/Favicon.svg" type="image/svg+xml">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Space Mono', monospace;
+            background: #0a0a0a;
+            color: #e0e0e0;
+            line-height: 1.6;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            inset: 0;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 1000;
+        }
+
+        a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 40px;
+        }
+
+        .main-nav {
+            position: fixed;
+            top: 30px;
+            left: 40px;
+            z-index: 1500;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .main-nav a {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+            width: fit-content;
+        }
+
+        .main-nav a:hover,
+        .main-nav a.active {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 40px;
+        }
+
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 11px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .social-row {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        .social-row a {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .social-row a:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+        }
+
+        .signup-section {
+            text-align: center;
+            padding: 120px 0;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .signup-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+        }
+
+        .signup-subtitle {
+            font-size: 13px;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .signup-form {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .signup-form input[type="email"] {
+            flex: 1;
+            min-width: 250px;
+            padding: 16px 20px;
+            background: #111;
+            border: 1px solid #2a2a2a;
+            color: #ffffff;
+            font-family: 'Space Mono', monospace;
+            font-size: 13px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .signup-form input[type="email"]::placeholder {
+            color: #555;
+        }
+
+        .signup-form input[type="email"]:focus {
+            border-color: #444;
+        }
+
+        .signup-form button {
+            padding: 16px 35px;
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .signup-form button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .signup-message {
+            margin-top: 20px;
+            font-size: 13px;
+            color: #666;
+        }
+
+        .signup-message.success {
+            color: #4ade80;
+        }
+
+        .signup-message.error {
+            color: #f87171;
+        }
+
+        footer {
+            padding: 50px 0;
+            text-align: center;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-links a {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #555;
+        }
+
+        .footer-links a:hover {
+            color: #ffffff;
+        }
+
+        .copyright {
+            font-size: 11px;
+            color: #333;
+        }
+
+        @media (max-width: 600px) {
+            .main-nav {
+                top: 20px;
+                left: 20px;
+                gap: 15px;
+            }
+
+            .main-nav a {
+                font-size: 10px;
+            }
+
+            .container {
+                padding: 0 25px;
+            }
+
+            .hero {
+                padding: 80px 25px 40px;
+            }
+
+            .logo {
+                max-width: 280px;
+            }
+
+            .social-row {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .signup-form {
+                flex-direction: column;
+            }
+
+            .signup-form input[type="email"] {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="music.html" class="active">Music</a>
+        <a href="tour.html">Tour</a>
+        <a href="about.html">About</a>
+    </nav>
+
+    <section style="min-height: 100vh; padding: 120px 40px 100px;">
+        <div class="container">
+            <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Music</div>
+            <div style="border-radius: 12px; overflow: hidden;">
+                <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/54adf3XGTHruft1eisBUDa?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="signup-section">
+        <div class="container">
+            <h2 class="signup-title">Stay in the loop</h2>
+            <p class="signup-subtitle">No spam. Just the stuff that matters — new music, shows, and behind the scenes.</p>
+            
+            <form class="signup-form" id="signup-form">
+                <input type="email" name="email" id="signup-email" placeholder="Your email" required>
+                <button type="submit" id="signup-button">Subscribe</button>
+            </form>
+            <p class="signup-message" id="signup-message"></p>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-links">
+            <a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Spotify</a>
+            <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">Instagram</a>
+            <a href="https://www.youtube.com/@dreamstosell" target="_blank">YouTube</a>
+            <a href="mailto:info@dreamstosell.net">Contact</a>
+        </div>
+        <p class="copyright">© 2025 Dreams to Sell. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('signup-form').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('signup-email').value;
+            const button = document.getElementById('signup-button');
+            const message = document.getElementById('signup-message');
+            
+            button.textContent = 'Subscribing...';
+            button.disabled = true;
+            message.textContent = '';
+            message.className = 'signup-message';
+            
+            try {
+                const response = await fetch('https://email-signup.dreamstosellmusic.workers.dev', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        email: email
+                    })
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    message.textContent = "You're in. Welcome to the list.";
+                    message.className = 'signup-message success';
+                    document.getElementById('signup-email').value = '';
+                } else {
+                    if (data.error && data.error.code === 'MEMBER_EXISTS_WITH_EMAIL_ADDRESS') {
+                        message.textContent = "You're already on the list.";
+                        message.className = 'signup-message';
+                    } else {
+                        message.textContent = 'Something went wrong. Try again.';
+                        message.className = 'signup-message error';
+                    }
+                }
+            } catch (error) {
+                message.textContent = 'Something went wrong. Try again.';
+                message.className = 'signup-message error';
+            }
+            
+            button.textContent = 'Subscribe';
+            button.disabled = false;
+        });
+    </script>
+
+</body>
+</html>
