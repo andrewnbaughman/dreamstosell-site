@@ -427,8 +427,15 @@
     <section class="page-content">
         <div class="container">
             <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Music</div>
-            <div style="border-radius: 12px; overflow: hidden;">
+            
+            <!-- Spotify Embed -->
+            <div style="border-radius: 12px; overflow: hidden; margin-bottom: 30px;">
                 <iframe style="border-radius:12px" src="https://open.spotify.com/embed/artist/54adf3XGTHruft1eisBUDa?utm_source=generator&theme=0" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+
+            <!-- Apple Music Embed -->
+            <div style="border-radius: 12px; overflow: hidden;">
+                <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/artist/dreams-to-sell/1795038239"></iframe>
             </div>
         </div>
     </section>
@@ -451,12 +458,12 @@
             <a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Spotify</a>
             <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">Instagram</a>
             <a href="https://www.youtube.com/@dreamstosell" target="_blank">YouTube</a>
-            <a href="mailto:info@dreamstosell.net">Contact</a>
+            <a href="/cdn-cgi/l/email-protection#432a2d252c03273126222e30372c30262f2f6d2d2637">Contact</a>
         </div>
         <p class="copyright">© 2025 Dreams to Sell. All rights reserved.</p>
     </footer>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Hamburger Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -525,12 +532,3 @@
             } catch (error) {
                 message.textContent = 'Something went wrong. Try again.';
                 message.className = 'signup-message error';
-            }
-            
-            button.textContent = 'Subscribe';
-            button.disabled = false;
-        });
-    </script>
-
-</body>
-</html>
