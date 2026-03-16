@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Live - Dreams to Sell</title>
-    <meta name="description" content="Dreams to Sell - Tour Dates">
+    <meta name="description" content="Dreams to Sell - Live Shows">
     <link rel="icon" href="/Favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -75,51 +75,6 @@
 
         .main-nav a:hover,
         .main-nav a.active {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
-        }
-
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-            padding: 60px 40px;
-        }
-
-        .logo {
-            max-width: 400px;
-            width: 100%;
-            margin-bottom: 20px;
-        }
-
-        .tagline {
-            font-size: 13px;
-            letter-spacing: 5px;
-            text-transform: uppercase;
-            color: #555;
-            margin-bottom: 50px;
-        }
-
-        .social-row {
-            display: flex;
-            gap: 30px;
-            margin-bottom: 50px;
-        }
-
-        .social-row a {
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #666;
-            padding-bottom: 4px;
-            border-bottom: 1px solid transparent;
-            transition: color 0.3s, border-color 0.3s;
-        }
-
-        .social-row a:hover {
             color: #ffffff;
             border-bottom-color: #ffffff;
         }
@@ -253,6 +208,69 @@
             padding: 120px 150px 100px;
         }
 
+        /* ── Show Listings ── */
+        .show-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .show-info {
+            flex: 1;
+        }
+
+        .show-date {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .show-venue {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .show-location {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .show-button {
+            padding: 14px 30px;
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-family: 'Space Mono', monospace;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .show-button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .no-shows {
+            text-align: center;
+            padding: 60px 0;
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 2px;
+        }
+
         /* ── Hamburger Menu (Mobile Only) ── */
         .menu-toggle {
             position: fixed;
@@ -361,18 +379,16 @@
                 padding: 0;
             }
 
-            .hero {
-                padding: 80px 25px 40px;
-            }
-
-            .logo {
-                max-width: 280px;
-            }
-
-            .social-row {
-                flex-wrap: wrap;
-                justify-content: center;
+            .show-item {
+                flex-direction: column;
+                align-items: flex-start;
                 gap: 20px;
+                padding: 25px 0;
+            }
+
+            .show-button {
+                width: 100%;
+                text-align: center;
             }
 
             .signup-form {
@@ -439,21 +455,22 @@
     <section class="page-content">
         <div class="container">
             <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Live</div>
-            <ul style="list-style: none;">
-                <!-- Example show - uncomment and duplicate as needed
-                <li style="display: flex; justify-content: space-between; align-items: center; padding: 25px 0; border-bottom: 1px solid #1a1a1a;">
-                    <span style="font-size: 12px; color: #555; letter-spacing: 1px; min-width: 120px;">MAR 15, 2025</span>
-                    <div style="flex: 1; padding: 0 20px;">
-                        <div style="font-weight: 700; color: #ffffff; font-size: 14px;">The Echo</div>
-                        <div style="font-size: 12px; color: #666; margin-top: 4px;">Los Angeles, CA</div>
+            
+            <!-- Show Listings -->
+            <div class="show-list">
+                <!-- Example Show -->
+                <div class="show-item">
+                    <div class="show-info">
+                        <div class="show-date">June 15, 2026</div>
+                        <div class="show-venue">Bogart's</div>
+                        <div class="show-location">Cincinnati, OH</div>
                     </div>
-                    <a href="#" style="font-size: 13px; letter-spacing: 2px; text-transform: uppercase; padding: 10px 20px; border: 1px solid #333; color: #888;">Tickets</a>
-                </li>
-                -->
-                <li style="padding: 25px 0;">
-                    <p style="color: #555; font-size: 14px;">More shows coming soon. Sign up below to be the first to know.</p>
-                </li>
-            </ul>
+                    <a href="https://www.ticketmaster.com" target="_blank" class="show-button">Tickets</a>
+                </div>
+
+                <!-- More Shows Coming Soon -->
+                <div class="no-shows">More shows coming soon...</div>
+            </div>
         </div>
     </section>
 
