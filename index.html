@@ -33,7 +33,7 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1500;
+            z-index: 10;
         }
 
         a {
@@ -56,7 +56,7 @@
             position: fixed;
             top: 30px;
             left: 40px;
-            z-index: 1500;
+            z-index: 100;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -92,7 +92,6 @@
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-            z-index: 0;
         }
 
         .hero::before {
@@ -100,12 +99,12 @@
             position: absolute;
             inset: 0;
             background: rgba(10, 10, 10, 0.7);
-            z-index: 1;
+            z-index: 0;
         }
 
         .hero > * {
             position: relative;
-            z-index: 2;
+            z-index: 1;
         }
 
         .logo {
@@ -292,7 +291,6 @@
             flex-direction: column;
             justify-content: center;
             gap: 6px;
-            pointer-events: auto;
         }
 
         .menu-toggle span {
@@ -367,7 +365,6 @@
                 display: flex;
                 top: 20px;
                 left: 20px;
-                z-index: 3000;
             }
 
             .menu-nav a {
@@ -441,8 +438,8 @@
             <a href="music.html" class="menu-link">Music</a>
             <a href="live.html" class="menu-link">Live</a>
             <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
-            <a href="about.html" class="menu-link">About</a>
-            <a href="/cdn-cgi/l/email-protection#51383f373e11352334303c22253e22343d3d7f3f3425" class="menu-link">Contact</a> 
+            <a href="links.html" class="menu-link">Links</a>
+            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a> 
         </nav>
     </div>
 
@@ -451,19 +448,20 @@
         <a href="music.html">Music</a>
         <a href="live.html">Live</a>
         <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
-        <a href="about.html">About</a>
-        <a href="/cdn-cgi/l/email-protection#41282f272e01253324202c32352e32242d2d6f2f2435">Contact</a>
+        <a href="links.html">Links</a>
+        <a href="mailto:info@dreamstosell.net">Contact</a>
     </nav>
 
     <section class="hero">
         <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
-        <p class="tagline"><a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Stream <b>"The Altar"</b> Now</a></p>
+        <!---<p class="tagline"><a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Stream <b>"The Altar"</b> Now</a></p>-->
+        <p class="tagline"><a href="https://dreamstosell.net/thealtar" target="_blank"><b>"The Altar"</b> Streaming Everywhere</a></p>
         
         <div class="social-row">
             <a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Spotify</a>
-            <a href="https://music.apple.com/us/artist/dreams-to-sell/1795038239" target="_blank">Apple Music</a>
-            <a href="https://www.tiktok.com/@dreamstosellmusic" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">Instagram</a>
+            <a href="https://music.apple.com/us/artist/dreams-to-sell/1795038239" target="_blank">Apple</a>
+            <a href="https://www.tiktok.com/@dreamstosell?_r=1&_t=ZP-957p5ikb0oA" target="_blank">TikTok</a>
+            <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">IG</a>
             <a href="https://www.youtube.com/@dreamstosell" target="_blank">YouTube</a>
         </div>
     </section>
@@ -494,7 +492,7 @@
                     <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                 </svg>
             </a>
-            <a href="https://music.amazon.com/artists/B0FXHMY5VJ/dreams-to-sell" target="_blank" aria-label="Amazon Music">
+            <a href="https://music.amazon.com/artists/B0DWGWM51B/dreams-to-sell" target="_blank" aria-label="Amazon Music">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M257.2 162.7c-48.7 1.8-169.5 15.5-169.5 117.5 0 109.5 138.3 114 183.5 43.2 6.5 10.2 35.4 37.5 45.3 46.8l56.8-56S341 288.9 341 261.4V114.3C341 89 316.5 32 228.7 32 140.7 32 94 87 94 136.3l73.5 6.8c16.3-49.5 54.2-49.5 54.2-49.5 40.7-.1 35.5 29.8 35.5 69.1zm0 86.8c0 80-84.2 68-84.2 17.2 0-47.2 50.5-56.7 84.2-57.8v40.6zm136 163.5c-7.7 10-70 67-174.5 67S34.2 408.5 9.7 379c-6.8-7.7 1-11.3 5.5-8.3C88.5 415.2 203 488.5 387.7 401c7.5-3.7 13.3 2 5.5 12zm39.8 2.2c-6.5 15.8-16 26.8-21.2 31-5.5 4.5-9.5 2.7-6.5-3.8s19.3-46.5 12.7-55c-6.5-8.3-37-4.3-48-3.2-10.8 1-13 2-14-.3-2.3-5.7 21.7-15.5 37.5-17.5 15.7-1.8 41-.8 46 5.7 3.7 5.1 0 27.1-6.5 43.1z"/>
                 </svg>
@@ -516,14 +514,14 @@
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                 </svg>
             </a>
-            <a href="https://www.tiktok.com/@dreamstosellmusic" target="_blank" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@dreamstosell?_r=1&_t=ZP-957p5ikb0oA" target="_blank" aria-label="TikTok">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                 </svg>
             </a>
             
             <!-- Contact -->
-            <a href="/cdn-cgi/l/email-protection#442d2a222b04203621252937302b372128286a2a2130" aria-label="Email Contact">
+            <a href="mailto:info@dreamstosell.net" aria-label="Email Contact">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
                     <path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/>
                 </svg>
@@ -531,13 +529,13 @@
         </div>
         
         <p class="copyright" style="color: #666; margin-bottom: 20px;">Everything Sinks to the Bottom of the Lake</p>
-        <p class="copyright" style="opacity: 0.5;">© 2026 Dreams to Sell &</p>
-        <p class="copyright" style="opacity: 0.5;">Beyond the Noise Productions</p>
-        <p class="copyright" style="opacity: 0.5;">In Association with Have Time, Be Empty</p>
+        <p class="copyright" style="color: #666;">© 2026 Dreams to Sell &</p>
+        <p class="copyright" style="color: #666;">Beyond the Noise Productions</p>
+        <p class="copyright" style="color: #666;">In Association with Have Time, Be Empty</p>
         <img src="images/cherub_moon_transparent.png" alt="Logo" style="width: 100px; margin-top: 5px; opacity: 0.6;">
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         // Hamburger Menu Toggle
         const menuToggle = document.getElementById('menu-toggle');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -606,4 +604,14 @@
                     }
                 }
             } catch (error) {
-                message.textContent = 'Somethin
+                message.textContent = 'Something went wrong. Try again.';
+                message.className = 'signup-message error';
+            }
+            
+            button.textContent = 'Subscribe';
+            button.disabled = false;
+        });
+    </script>
+
+</body>
+</html>
