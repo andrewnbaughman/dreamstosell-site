@@ -98,7 +98,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(10, 10, 10, 0.7);
+            background: rgba(10, 10, 10, 0.5);
             z-index: 0;
         }
 
@@ -280,43 +280,29 @@
             position: fixed;
             top: 30px;
             left: 30px;
-            width: 40px;
-            height: 40px;
+            width: auto;
+            height: auto;
             background: transparent;
             border: none;
             cursor: pointer;
             z-index: 2000;
             padding: 0;
             display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 0;
-            background: transparent;
-            border-top: 2px solid #ffffff;
+            font-family: 'Space Mono', monospace;
+            font-size: 14px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #ffffff;
             opacity: 0.8;
-            transition: all 0.3s;
+            transition: opacity 0.3s;
         }
 
-        .menu-toggle.active span {
+        .menu-toggle:hover {
             opacity: 1;
         }
 
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
+        .menu-toggle span {
+            display: none;
         }
 
         .menu-overlay {
@@ -378,7 +364,7 @@
 
             .hero {
                 padding: 80px 25px 40px;
-                background-image: url('/images/Band4.3.jpg');
+                background-image: url('/images/placeholder.jpg');
             }
 
             .logo {
@@ -425,11 +411,7 @@
 <body>
 
     <!-- Hamburger Menu Toggle (Mobile Only) -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
+    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">MENU</button>
 
     <!-- Menu Overlay (Mobile Only) -->
     <div class="menu-overlay" id="menu-overlay">
