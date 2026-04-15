@@ -8,7 +8,7 @@
     <link rel="icon" href="/Favicons.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -150,6 +150,72 @@
         .social-row a:hover {
             color: #ffffff;
             border-bottom-color: #ffffff;
+        }
+
+        /* ── Music Section ── */
+        .music-section {
+            padding: 120px 150px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .section-title {
+            font-size: 16px;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 700;
+            margin-bottom: 60px;
+        }
+
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .release-item {
+            text-align: left;
+        }
+
+        .release-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-bottom: 30px;
+        }
+
+        .release-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .release-title {
+            font-size: 23px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-family: 'Space Mono', monospace;
+            line-height: 1.2;
+        }
+
+        .listen-button {
+            display: inline-block;
+            padding: 14px 40px;
+            border: 1px solid #ffffff;
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: all 0.3s;
+            font-family: 'Space Mono', monospace;
+        }
+
+        .listen-button:hover {
+            background: #ffffff;
+            color: #000000;
         }
 
         .signup-section {
@@ -299,7 +365,7 @@
             height: 0;
             background: transparent;
             border-top: 2px solid #ffffff;
-            opacity: 1.0;
+            opacity: 1;
             transition: all 0.3s;
         }
 
@@ -379,15 +445,10 @@
             .hero {
                 padding: 80px 25px 40px;
                 background-image: url('/images/Band4.3.jpg');
+            }
 
             .hero::before {
                 background: rgba(10, 10, 10, 0.75);
-            }
-
-            }
-
-            .hero::before {
-                background: rgba(10, 10, 10, 0.7);
             }
 
             .logo {
@@ -398,6 +459,23 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
+            }
+
+            .music-section {
+                padding: 100px 25px;
+            }
+
+            .releases-grid {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .release-item {
+                text-align: center;
+            }
+
+            .release-title {
+                font-size: 20px;
             }
 
             .signup-form {
@@ -444,7 +522,6 @@
     <div class="menu-overlay" id="menu-overlay">
         <nav class="menu-nav">
             <a href="index.html" class="menu-link">Home</a>
-            <a href="music.html" class="menu-link">Music</a>
             <a href="live.html" class="menu-link">Live</a>
             <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
             <a href="links.html" class="menu-link">Links</a>
@@ -454,7 +531,6 @@
 
     <nav class="main-nav">
         <a href="index.html" class="active">Home</a>
-        <a href="music.html">Music</a>
         <a href="live.html">Live</a>
         <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
         <a href="links.html">Links</a>
@@ -463,7 +539,6 @@
 
     <section class="hero">
         <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
-        <!---<p class="tagline"><a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Stream <b>"The Altar"</b> Now</a></p>-->
         <p class="tagline"><a href="https://dreamstosell.net/thealtar" target="_blank"><b>"The Altar"</b> Streaming Everywhere</a></p>
         
         <div class="social-row">
@@ -472,6 +547,30 @@
             <a href="https://www.tiktok.com/@dreamstosell?_r=1&_t=ZP-957p5ikb0oA" target="_blank">TikTok</a>
             <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">IG</a>
             <a href="https://www.youtube.com/@dreamstosell" target="_blank">YouTube</a>
+        </div>
+    </section>
+
+    <section class="music-section">
+        <div class="container">
+            <div class="section-title">Music</div>
+            
+            <div class="releases-grid">
+                <!-- The Altar -->
+                <div class="release-item">
+                    <img src="/images/THE_ALTAR_333_lowres.jpg" alt="The Altar" class="release-cover">
+                    <div class="release-label">Single • 2026</div>
+                    <h2 class="release-title">The Altar</h2>
+                    <a href="https://dreamstosell.net/thealtar" target="_blank" class="listen-button">Listen</a>
+                </div>
+
+                <!-- Dreams to Sell EP -->
+                <div class="release-item">
+                    <img src="/images/FULL%20EP.jpg" alt="Dreams to Sell" class="release-cover">
+                    <div class="release-label">EP • 2025</div>
+                    <h2 class="release-title">Dreams to Sell</h2>
+                    <a href="https://dreamstosell.net/dreamstosell" target="_blank" class="listen-button">Listen</a>
+                </div>
+            </div>
         </div>
     </section>
 
