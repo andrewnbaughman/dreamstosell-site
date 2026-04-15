@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dreams to Sell | Official Website</title>
-    <meta name="description" content="Dreams to Sell - Dreamy emo, post-rock haze, and melancholy">
-    <link rel="icon" href="/Favicons.png" type="image/png">
+    <title>Music - Dreams to Sell</title>
+    <meta name="description" content="Dreams to Sell - Music">
+    <link rel="icon" href="/Favicon.svg" type="image/svg+xml">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 10;
+            z-index: 1000;
         }
 
         a {
@@ -56,7 +56,7 @@
             position: fixed;
             top: 30px;
             left: 40px;
-            z-index: 100;
+            z-index: 1500;
             display: flex;
             flex-direction: column;
             gap: 20px;
@@ -66,7 +66,7 @@
             font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #999;
+            color: #666;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;
             transition: color 0.3s, border-color 0.3s;
@@ -86,25 +86,7 @@
             justify-content: center;
             align-items: center;
             text-align: center;
-            padding: 60px 150px;
-            position: relative;
-            background-image: url('/images/Band2.JPG');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: rgba(10, 10, 10, 0.5);
-            z-index: 0;
-        }
-
-        .hero > * {
-            position: relative;
-            z-index: 1;
+            padding: 60px 40px;
         }
 
         .logo {
@@ -121,16 +103,6 @@
             margin-bottom: 50px;
         }
 
-        .tagline a {
-            color: #888;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        
-        .tagline a:hover {
-            color: #ffffff;
-        }
-        
         .social-row {
             display: flex;
             gap: 30px;
@@ -138,10 +110,10 @@
         }
 
         .social-row a {
-            font-size: 11px;
+            font-size: 13px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #999;
+            color: #666;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;
             transition: color 0.3s, border-color 0.3s;
@@ -150,72 +122,6 @@
         .social-row a:hover {
             color: #ffffff;
             border-bottom-color: #ffffff;
-        }
-
-        /* ── Music Section ── */
-        .music-section {
-            padding: 120px 150px;
-            border-top: 1px solid #1a1a1a;
-        }
-
-        .section-title {
-            font-size: 13px;
-            letter-spacing: 4px;
-            text-transform: uppercase;
-            color: #ffffff;
-            font-weight: 700;
-            margin-bottom: 60px;
-        }
-
-        .releases-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 60px;
-        }
-
-        .release-item {
-            text-align: left;
-        }
-
-        .release-cover {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            margin-bottom: 30px;
-        }
-
-        .release-label {
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 15px;
-        }
-
-        .release-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 30px;
-            font-family: 'Space Mono', monospace;
-            line-height: 1.2;
-        }
-
-        .listen-button {
-            display: inline-block;
-            padding: 14px 40px;
-            border: 1px solid #ffffff;
-            font-size: 11px;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #ffffff;
-            transition: all 0.3s;
-            font-family: 'Space Mono', monospace;
-        }
-
-        .listen-button:hover {
-            background: #ffffff;
-            color: #000000;
         }
 
         .signup-section {
@@ -277,7 +183,7 @@
             border: 1px solid #ffffff;
             color: #ffffff;
             font-family: 'Space Mono', monospace;
-            font-size: 11px;
+            font-size: 13px;
             font-weight: 700;
             letter-spacing: 3px;
             text-transform: uppercase;
@@ -339,6 +245,94 @@
 
         .copyright {
             font-size: 11px;
+            color: #333;
+        }
+
+        .page-content {
+            min-height: 100vh;
+            padding: 120px 150px 100px;
+        }
+
+        /* ── Album Grid ── */
+        .album-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .album-card {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .album-cover {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.3s;
+        }
+
+        .album-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s;
+            padding: 20px;
+        }
+
+        .album-card:hover .album-overlay {
+            opacity: 1;
+        }
+
+        .album-card:hover .album-cover {
+            transform: scale(1.05);
+        }
+
+        .album-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 8px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .album-type {
+            font-size: 11px;
+            color: #666;
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .streaming-links {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .streaming-links a {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            padding: 8px 20px;
+            border: 1px solid #333;
+            transition: all 0.3s;
+            text-align: center;
+        }
+
+        .streaming-links a:hover {
+            color: #ffffff;
+            border-color: #ffffff;
         }
 
         /* ── Hamburger Menu (Mobile Only) ── */
@@ -365,10 +359,9 @@
             height: 0;
             background: transparent;
             border-top: 2px solid #ffffff;
-            opacity: 1;
+            opacity: 0.9;
             transition: all 0.3s;
         }
-
         .menu-toggle.active span {
             opacity: 1;
         }
@@ -442,13 +435,30 @@
                 padding: 0 25px;
             }
 
-            .hero {
-                padding: 80px 25px 40px;
-                background-image: url('/images/Band4.3.jpg');
+            .page-content {
+                padding: 100px 25px 70px;
             }
 
-            .hero::before {
-                background: rgba(10, 10, 10, 0.75);
+            .page-content .container {
+                padding: 0;
+            }
+
+            .album-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            /* Always show overlay on mobile */
+            .album-overlay {
+                opacity: 1;
+            }
+
+            .album-card:hover .album-cover {
+                transform: none;
+            }
+
+            .hero {
+                padding: 80px 25px 40px;
             }
 
             .logo {
@@ -459,23 +469,6 @@
                 flex-wrap: wrap;
                 justify-content: center;
                 gap: 20px;
-            }
-
-            .music-section {
-                padding: 100px 25px;
-            }
-
-            .releases-grid {
-                grid-template-columns: 1fr;
-                gap: 80px;
-            }
-
-            .release-item {
-                text-align: center;
-            }
-
-            .release-title {
-                font-size: 20px;
             }
 
             .signup-form {
@@ -522,53 +515,131 @@
     <div class="menu-overlay" id="menu-overlay">
         <nav class="menu-nav">
             <a href="index.html" class="menu-link">Home</a>
+            <a href="music.html" class="menu-link">Music</a>
             <a href="live.html" class="menu-link">Live</a>
             <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
             <a href="links.html" class="menu-link">Links</a>
-            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a> 
+            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a>
         </nav>
     </div>
 
     <nav class="main-nav">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html">Home</a>
+        <a href="music.html" class="active">Music</a>
         <a href="live.html">Live</a>
         <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
         <a href="links.html">Links</a>
         <a href="mailto:info@dreamstosell.net">Contact</a>
     </nav>
 
-    <section class="hero">
-        <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
-        <p class="tagline"><a href="https://dreamstosell.net/thealtar" target="_blank"><b>"The Altar"</b> Streaming Everywhere</a></p>
-        
-        <div class="social-row">
-            <a href="https://open.spotify.com/artist/54adf3XGTHruft1eisBUDa" target="_blank">Spotify</a>
-            <a href="https://music.apple.com/us/artist/dreams-to-sell/1795038239" target="_blank">Apple</a>
-            <a href="https://www.tiktok.com/@dreamstosell?_r=1&_t=ZP-957p5ikb0oA" target="_blank">TikTok</a>
-            <a href="https://www.instagram.com/dreamstosellmusic/" target="_blank">IG</a>
-            <a href="https://www.youtube.com/@dreamstosell" target="_blank">YouTube</a>
-        </div>
-    </section>
-
-    <section class="music-section">
+    <section class="page-content">
         <div class="container">
-            <div class="section-title">Music</div>
+            <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Music</div>
             
-            <div class="releases-grid">
+            <!-- Album Grid -->
+            <div class="album-grid">
                 <!-- The Altar -->
-                <div class="release-item">
-                    <img src="/images/THE_ALTAR_333_lowres.jpg" alt="The Altar" class="release-cover">
-                    <div class="release-label">Single • 2026</div>
-                    <h2 class="release-title">The Altar</h2>
-                    <a href="https://dreamstosell.net/thealtar" class="listen-button">Listen</a>
+                <div class="album-card">
+                    <img src="/images/THE_ALTAR_333_lowres.jpg" alt="Dreams To Sell EP" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">The Altar</h3>
+                        <p class="album-type">Single • 2026</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/0etsQst7s1hRZNYlcYIca6?si=Df86AKtjQKmP0hZKs9yVIw" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/the-altar-single/1888753730" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0GV4SRWWP" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/album/the-altar" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Dreams To Sell EP -->
+                <div class="album-card">
+                    <img src="/images/FULL%20EP.jpg" alt="Dreams To Sell EP" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">Dreams To Sell</h3>
+                        <p class="album-type">EP • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/5ZPyd9p74C1bKEM7PwSwB0" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/dreams-to-sell-ep/1795038237" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0FXHMY5K1" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/album/dreams-to-sell" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Dreams to Sell EP -->
-                <div class="release-item">
-                    <img src="/images/FULL%20EP.jpg" alt="Dreams to Sell" class="release-cover">
-                    <div class="release-label">EP • 2025</div>
-                    <h2 class="release-title">Dreams to Sell</h2>
-                    <a href="https://dreamstosell.net/dreamstosell" class="listen-button">Listen</a>
+                <!-- Moments Collapse -->
+                <div class="album-card">
+                    <img src="/images/MOMENTS%20COLLAPSE.jpg" alt="Moments Collapse" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">Moments Collapse</h3>
+                        <p class="album-type">Single • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/2QGaw4qPjWNoAYZ3DZVmgK" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/moments-collapse-single/1827613714" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0FHXZ3H6Y" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/track/moments-collapse" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Reverie -->
+                <div class="album-card">
+                    <img src="/images/REVERIE.jpg" alt="Reverie" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">Reverie</h3>
+                        <p class="album-type">Single • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/1XaWdHmdFKfXmtuHuSOLG8" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/reverie/1809206171?i=1809206173" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0F5BVY63B" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/track/reverie" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sleepwalker -->
+                <div class="album-card">
+                    <img src="/images/SLEEPWALKER.jpg" alt="Sleepwalker" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">Sleepwalker</h3>
+                        <p class="album-type">Single • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/5VvwegftsUnW7Usnbj9F8Y" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/sleepwalker-single/1827526627" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0FHYKYQHK" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/track/sleepwalker" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- There's Hope For You Yet -->
+                <div class="album-card">
+                    <img src="/images/THERE'S%20HOPE.jpg" alt="There's Hope For You Yet" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">There's Hope For You Yet</h3>
+                        <p class="album-type">Single • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/0a6dDw1EhZhe5RME5ovUru" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/theres-hope-for-you-yet-single/1802716885" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0F1PF74RR" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/track/theres-hope-for-you-yet" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Unrequited -->
+                <div class="album-card">
+                    <img src="/images/UNREQUITED.jpg" alt="Unrequited" class="album-cover">
+                    <div class="album-overlay">
+                        <h3 class="album-title">Unrequited</h3>
+                        <p class="album-type">Single • 2025</p>
+                        <div class="streaming-links">
+                            <a href="https://open.spotify.com/album/7GrkgHN78F0qqeZXXYYmsG" target="_blank">Spotify</a>
+                            <a href="https://music.apple.com/us/album/unrequited-single/1807832451" target="_blank">Apple Music</a>
+                            <a href="https://music.amazon.com/albums/B0F4FZXFPB" target="_blank">Amazon</a>
+                            <a href="https://dreamstosell.bandcamp.com/track/unrequited" target="_blank">Bandcamp</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -655,7 +726,6 @@
                 menuOverlay.classList.toggle('active');
             });
 
-            // Close menu when clicking a link
             menuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     menuToggle.classList.remove('active');
@@ -663,7 +733,6 @@
                 });
             });
 
-            // Close menu when clicking outside
             menuOverlay.addEventListener('click', function(e) {
                 if (e.target === menuOverlay) {
                     menuToggle.classList.remove('active');
