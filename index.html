@@ -98,7 +98,7 @@
             content: '';
             position: absolute;
             inset: 0;
-            background: rgba(10, 10, 10, 0.65);
+            background: rgba(10, 10, 10, 0.55);
             z-index: 0;
         }
 
@@ -379,6 +379,15 @@
             .hero {
                 padding: 80px 25px 40px;
                 background-image: url('/images/Band4.3.jpg');
+
+            .hero::before {
+                background: rgba(10, 10, 10, 0.7);
+            }
+
+            }
+
+            .hero::before {
+                background: rgba(10, 10, 10, 0.7);
             }
 
             .logo {
