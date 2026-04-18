@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Live - Dreams to Sell</title>
-    <meta name="description" content="Dreams to Sell - Live Shows">
-    <link rel="icon" href="/Favicon.svg" type="image/svg+xml">
+    <title>Dreams to Sell | Official Website</title>
+    <meta name="description" content="Dreams to Sell - Dreamy emo, post-rock haze, and melancholy">
+    <link rel="icon" href="/Favicons.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -26,16 +26,16 @@
             color: #e0e0e0;
             line-height: 1.6;
         }
-        
+
         body::before {
             content: '';
             position: fixed;
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1000;
+            z-index: 10;
         }
-        
+
         a {
             color: #e0e0e0;
             text-decoration: none;
@@ -52,31 +52,222 @@
             padding: 0 40px;
         }
 
-        .main-nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            z-index: 1500;
+        .hero {
+            min-height: 100vh;
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 60px 150px;
+            position: relative;
+            background-image: url('/images/Band2.JPG');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
         }
 
-        .main-nav a {
-            font-size: 13px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 10, 10, 0.5);
+            z-index: 0;
+        }
+
+        .hero > * {
+            position: relative;
+            z-index: 1;
+        }
+
+        .logo {
+            max-width: 400px;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        .tagline {
+            font-size: 15px;
+            letter-spacing: 5px;
+            text-transform: uppercase;
+            color: #555;
+            margin-bottom: 50px;
+        }
+
+        .tagline a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .tagline a:hover {
+            color: #ffffff;
+        }
+        
+        .nav-buttons {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .nav-button {
+            font-size: 11px;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #666;
+            color: #999;
             padding-bottom: 4px;
             border-bottom: 1px solid transparent;
             transition: color 0.3s, border-color 0.3s;
-            width: fit-content;
         }
 
-        .main-nav a:hover,
-        .main-nav a.active {
+        .nav-button:hover {
             color: #ffffff;
             border-bottom-color: #ffffff;
+        }
+
+        /* ── Music Section ── */
+        .music-section {
+            padding: 120px 150px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .section-title {
+            font-size: 23px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            font-weight: 400;
+            margin-bottom: 60px;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .releases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+
+        .release-item {
+            text-align: left;
+        }
+
+        .release-cover {
+            width: 100%;
+            aspect-ratio: 1;
+            object-fit: cover;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .release-cover:hover {
+            transform: scale(1.05);
+        }
+
+        .release-label {
+            font-size: 11px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 15px;
+        }
+
+        .release-title {
+            font-size: 23px;
+            font-weight: 400;
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-family: 'Times New Roman', Times, serif;
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .listen-button {
+            display: inline-block;
+            padding: 14px 40px;
+            border: 1px solid #ffffff;
+            font-size: 11px;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            color: #ffffff;
+            transition: all 0.3s;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
+        }
+
+        .listen-button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        /* ── Live Section ── */
+        .live-section {
+            padding: 120px 150px;
+            border-top: 1px solid #1a1a1a;
+        }
+
+        .show-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            border-bottom: 1px solid #1a1a1a;
+        }
+
+        .show-info {
+            flex: 1;
+        }
+
+        .show-date {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #666;
+            margin-bottom: 8px;
+        }
+
+        .show-venue {
+            font-size: 16px;
+            font-weight: 700;
+            color: #ffffff;
+            margin-bottom: 4px;
+            letter-spacing: 1px;
+        }
+
+        .show-location {
+            font-size: 13px;
+            color: #888;
+        }
+
+        .show-button {
+            padding: 14px 30px;
+            background: transparent;
+            border: 1px solid #ffffff;
+            color: #ffffff;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .show-button:hover {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .no-shows {
+            text-align: center;
+            padding: 60px 0;
+            font-size: 13px;
+            color: #666;
+            letter-spacing: 2px;
         }
 
         .signup-section {
@@ -87,10 +278,12 @@
 
         .signup-title {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 400;
             color: #ffffff;
             margin-bottom: 15px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
         }
 
         .signup-subtitle {
@@ -137,10 +330,10 @@
             background: transparent;
             border: 1px solid #ffffff;
             color: #ffffff;
-            font-family: 'Space Mono', monospace;
-            font-size: 13px;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 11px;
+            font-weight: 400;
+            letter-spacing: 1px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
@@ -200,75 +393,6 @@
 
         .copyright {
             font-size: 11px;
-            color: #333;
-        }
-
-        .page-content {
-            min-height: 100vh;
-            padding: 120px 150px 100px;
-        }
-
-        /* ── Show Listings ── */
-        .show-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 30px 0;
-            border-bottom: 1px solid #1a1a1a;
-        }
-
-        .show-info {
-            flex: 1;
-        }
-
-        .show-date {
-            font-size: 11px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #666;
-            margin-bottom: 8px;
-        }
-
-        .show-venue {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 4px;
-            letter-spacing: 1px;
-        }
-
-        .show-location {
-            font-size: 13px;
-            color: #888;
-        }
-
-        .show-button {
-            padding: 14px 30px;
-            background: transparent;
-            border: 1px solid #ffffff;
-            color: #ffffff;
-            font-family: 'Space Mono', monospace;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-
-        .show-button:hover {
-            background: #ffffff;
-            color: #000000;
-        }
-
-        .no-shows {
-            text-align: center;
-            padding: 60px 0;
-            font-size: 13px;
-            color: #666;
-            letter-spacing: 2px;
         }
 
         /* ── Hamburger Menu (Mobile Only) ── */
@@ -288,25 +412,17 @@
             justify-content: center;
             gap: 6px;
         }
-/*
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 2px;
-            background: #ffffff;
-            opacity: 1 !important;
-            transition: all 0.3s;
-        }
-*/
+
         .menu-toggle span {
             display: block;
             width: 100%;
             height: 0;
             background: transparent;
             border-top: 2px solid #ffffff;
-            opacity: 0.9;
+            opacity: 1;
             transition: all 0.3s;
         }
+
         .menu-toggle.active span {
             opacity: 1;
         }
@@ -361,15 +477,10 @@
         }
 
         @media (max-width: 600px) {
-            .main-nav {
-                display: none;
-            }
-
             .menu-toggle {
                 display: flex;
                 top: 20px;
                 left: 20px;
-                z-index: 2000;
             }
 
             .menu-nav a {
@@ -381,12 +492,48 @@
                 padding: 0 25px;
             }
 
-            .page-content {
-                padding: 100px 25px 70px;
+            .hero {
+                padding: 80px 25px 40px;
+                background-image: url('/images/Band4.3.jpg');
             }
 
-            .page-content .container {
-                padding: 0;
+            .hero::before {
+                background: rgba(10, 10, 10, 0.75);
+            }
+
+            .logo {
+                max-width: 280px;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
+            }
+
+            .nav-button {
+                /* Keep simple link style on mobile too */
+            }
+
+            .music-section {
+                padding: 100px 25px;
+            }
+
+            .releases-grid {
+                grid-template-columns: 1fr;
+                gap: 80px;
+            }
+
+            .release-item {
+                text-align: center;
+            }
+
+            .release-title {
+                font-size: 20px;
+            }
+
+            .live-section {
+                padding: 100px 25px;
             }
 
             .show-item {
@@ -444,30 +591,61 @@
     <!-- Menu Overlay (Mobile Only) -->
     <div class="menu-overlay" id="menu-overlay">
         <nav class="menu-nav">
-            <a href="index.html" class="menu-link">Home</a>
-            <a href="live.html" class="menu-link">Live</a>
+            <a href="#music" class="menu-link">Music</a>
+            <a href="#live" class="menu-link">Live</a>
             <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
             <a href="links.html" class="menu-link">Links</a>
-            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a>
+            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a> 
         </nav>
     </div>
 
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="live.html" class="active">Live</a>
-        <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
-        <a href="links.html">Links</a>
-        <a href="mailto:info@dreamstosell.net">Contact</a>
-    </nav>
+    <section class="hero">
+        <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
+        <p class="tagline"><a href="https://dreamstosell.net/thealtar" target="_blank"><b>"The Altar"</b> Streaming Everywhere</a></p>
+        
+        <div class="nav-buttons">
+            <a href="#music" class="nav-button">Music</a>
+            <a href="#live" class="nav-button">Live</a>
+            <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="nav-button">Merch</a>
+            <a href="links.html" class="nav-button">Links</a>
+            <a href="mailto:info@dreamstosell.net" class="nav-button">Contact</a>
+        </div>
+    </section>
 
-    <section class="page-content">
+    <section id="music" class="music-section">
         <div class="container">
-            <div style="font-size: 13px; letter-spacing: 4px; text-transform: uppercase; color: #ffffff; font-weight: 700; margin-bottom: 40px;">Live</div>
+            <div class="section-title">Music</div>
             
-            <!-- Show Listings -->
+            <div class="releases-grid">
+                <!-- The Altar -->
+                <div class="release-item">
+                    <a href="https://dreamstosell.net/thealtar" target="_blank">
+                        <img src="/images/THE_ALTAR_333_lowres.jpg" alt="The Altar" class="release-cover">
+                    </a>
+                    <div class="release-label">Single • 2026</div>
+                    <h2 class="release-title">The Altar</h2>
+                    <a href="https://dreamstosell.net/thealtar" target="_blank" class="listen-button">Listen</a>
+                </div>
+
+                <!-- Dreams to Sell EP -->
+                <div class="release-item">
+                    <a href="https://dreamstosell.net/dreamstosell" target="_blank">
+                        <img src="/images/FULL%20EP.jpg" alt="Dreams to Sell" class="release-cover">
+                    </a>
+                    <div class="release-label">EP • 2025</div>
+                    <h2 class="release-title">Dreams to Sell</h2>
+                    <a href="https://dreamstosell.net/dreamstosell" target="_blank" class="listen-button">Listen</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="live" class="live-section">
+        <div class="container">
+            <div class="section-title">Live</div>
+            
             <div class="show-list">
-                <!-- Example Show -->
-                 <div class="show-item">
+                <div class="show-item">
                     <div class="show-info">
                         <div class="show-date">May 20, 2026</div>
                         <div class="show-venue">The Southgate House Revival with Any Two Words and Cowbie</div>
@@ -484,7 +662,6 @@
                     <a href="https://www.ticketweb.com/event/say-it-louder-presents-mrs-the-southgate-house-revival-tickets/14853073?pl=southgatehouse&utm_content=bit-venue-ja-email" target="_blank" class="show-button">Tickets</a>
                 </div>
 
-                <!-- More Shows Coming Soon -->
                 <div class="no-shows">More shows coming soon. Sign up below to be the first to know.</div>
             </div>
         </div>
@@ -571,6 +748,7 @@
                 menuOverlay.classList.toggle('active');
             });
 
+            // Close menu when clicking a link
             menuLinks.forEach(link => {
                 link.addEventListener('click', function() {
                     menuToggle.classList.remove('active');
@@ -578,6 +756,7 @@
                 });
             });
 
+            // Close menu when clicking outside
             menuOverlay.addEventListener('click', function(e) {
                 if (e.target === menuOverlay) {
                     menuToggle.classList.remove('active');
