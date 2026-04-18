@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dreams To Sell EP - Dreams to Sell</title>
     <meta name="description" content="Stream 'Dreams To Sell EP' by Dreams to Sell on all platforms">
-    <link rel="icon" href="/Favicons.png" type="image/png">
+    <link rel="icon" href="/images/Favicons.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1000;
+            z-index: 10;
         }
 
         a {
@@ -52,33 +52,6 @@
             padding: 0 40px;
         }
 
-        .main-nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            z-index: 1500;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .main-nav a {
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #999;
-            padding-bottom: 4px;
-            border-bottom: 1px solid transparent;
-            transition: color 0.3s, border-color 0.3s;
-            width: fit-content;
-        }
-
-        .main-nav a:hover,
-        .main-nav a.active {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
-        }
-
         .release-hero {
             min-height: 100vh;
             display: flex;
@@ -95,12 +68,37 @@
             margin-bottom: 30px;
         }
 
+        .nav-buttons {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 50px;
+        }
+
+        .nav-button {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .nav-button:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+        }
+
         .release-title {
             font-size: 48px;
-            font-weight: 700;
-            letter-spacing: 2px;
+            font-weight: 400;
+            letter-spacing: 1px;
             margin-bottom: 10px;
             text-transform: uppercase;
+            font-family: 'Times New Roman', Times, serif;
         }
 
         .release-type {
@@ -151,11 +149,12 @@
             gap: 12px;
             padding: 25px 15px;
             border: 1px solid #1a1a1a;
-            transition: border-color 0.3s;
+            transition: all 0.3s;
         }
 
         .streaming-link:hover {
             border-color: #333;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
         .streaming-icon {
@@ -177,10 +176,12 @@
 
         .streaming-name {
             font-size: 11px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: #666;
             transition: color 0.3s;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
         }
 
         .streaming-link:hover .streaming-name {
@@ -195,10 +196,12 @@
 
         .signup-title {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 400;
             color: #ffffff;
             margin-bottom: 15px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
         }
 
         .signup-subtitle {
@@ -245,10 +248,10 @@
             background: transparent;
             border: 1px solid #ffffff;
             color: #ffffff;
-            font-family: 'Space Mono', monospace;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 1px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
@@ -257,6 +260,7 @@
         .signup-form button:hover {
             background: #ffffff;
             color: #000000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .signup-message {
@@ -310,98 +314,7 @@
             font-size: 11px;
         }
 
-        /* ── Hamburger Menu (Mobile Only) ── */
-        .menu-toggle {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 2000;
-            padding: 0;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 0;
-            background: transparent;
-            border-top: 2px solid #ffffff;
-            opacity: 1;
-            transition: all 0.3s;
-        }
-
-        .menu-toggle.active span {
-            opacity: 1;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 10, 10, 0.98);
-            z-index: 1500;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .menu-nav {
-            text-align: center;
-        }
-
-        .menu-nav a {
-            display: block;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #666;
-            margin: 30px 0;
-            transition: color 0.3s;
-        }
-
-        .menu-nav a:hover {
-            color: #ffffff;
-        }
-
         @media (max-width: 600px) {
-            .main-nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-                top: 20px;
-                left: 20px;
-            }
-
             .container {
                 padding: 0 25px;
             }
@@ -412,6 +325,12 @@
 
             .logo {
                 max-width: 280px;
+            }
+
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
             }
 
             .release-title {
@@ -452,37 +371,20 @@
 </head>
 <body>
 
-    <!-- Hamburger Menu Toggle (Mobile Only) -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Menu Overlay (Mobile Only) -->
-    <div class="menu-overlay" id="menu-overlay">
-        <nav class="menu-nav">
-            <a href="index.html" class="menu-link">Home</a>
-            <a href="live.html" class="menu-link">Live</a>
-            <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
-            <a href="links.html" class="menu-link">Links</a>
-            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a> 
-        </nav>
-    </div>
-
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="live.html">Live</a>
-        <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
-        <a href="links.html">Links</a>
-        <a href="mailto:info@dreamstosell.net">Contact</a>
-    </nav>
-
     <section class="release-hero">
         <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
         
+        <div class="nav-buttons">
+            <a href="index.html" class="nav-button">Home</a>
+            <a href="index.html#music" class="nav-button">Music</a>
+            <a href="index.html#live" class="nav-button">Live</a>
+            <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="nav-button">Merch</a>
+            <a href="links.html" class="nav-button">Links</a>
+            <a href="mailto:info@dreamstosell.net" class="nav-button">Contact</a>
+        </div>
+
         <h1 class="release-title">Dreams to Sell</h1>
-        <p class="release-type">EP • January 2025</p>
+        <p class="release-type">EP • October 2025</p>
 
         <div class="album-art-container">
             <img src="/images/FULL%20EP.jpg" alt="Dreams to Sell EP artwork" class="album-art">
@@ -597,7 +499,7 @@
                     <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
                 </svg>
             </a>
-            <a href="https://www.tiktok.com/@dreamstosell?_r=1&_t=ZP-957p5ikb0oA" target="_blank" aria-label="TikTok">
+            <a href="https://www.tiktok.com/@dreamstosellmusic" target="_blank" aria-label="TikTok">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path d="M448 209.9a210.1 210.1 0 0 1 -122.8-39.3V349.4A162.6 162.6 0 1 1 185 188.3V278.2a74.6 74.6 0 1 0 52.2 71.2V0l88 0a121.2 121.2 0 0 0 1.9 22.2h0A122.2 122.2 0 0 0 381 102.4a121.4 121.4 0 0 0 67 20.1z"/>
                 </svg>
@@ -619,32 +521,6 @@
     </footer>
 
     <script>
-        // Hamburger Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuOverlay = document.getElementById('menu-overlay');
-        const menuLinks = document.querySelectorAll('.menu-link');
-
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            });
-
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuToggle.classList.remove('active');
-                    menuOverlay.classList.remove('active');
-                });
-            });
-
-            menuOverlay.addEventListener('click', function(e) {
-                if (e.target === menuOverlay) {
-                    menuToggle.classList.remove('active');
-                    menuOverlay.classList.remove('active');
-                }
-            });
-        }
-
         // Email Signup
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
