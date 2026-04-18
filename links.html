@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Links - Dreams to Sell</title>
     <meta name="description" content="All Dreams to Sell links in one place - music, merch, shows, and social media">
-    <link rel="icon" href="/Favicon.svg" type="image/svg+xml">
+    <link rel="icon" href="/Favicons.png" type="image/png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
@@ -33,7 +33,7 @@
             inset: 0;
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='2.0' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
             pointer-events: none;
-            z-index: 1000;
+            z-index: 10;
         }
 
         a {
@@ -52,33 +52,6 @@
             padding: 0 40px;
         }
 
-        .main-nav {
-            position: fixed;
-            top: 30px;
-            left: 40px;
-            z-index: 1500;
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
-        .main-nav a {
-            font-size: 13px;
-            letter-spacing: 2px;
-            text-transform: uppercase;
-            color: #666;
-            padding-bottom: 4px;
-            border-bottom: 1px solid transparent;
-            transition: color 0.3s, border-color 0.3s;
-            width: fit-content;
-        }
-
-        .main-nav a:hover,
-        .main-nav a.active {
-            color: #ffffff;
-            border-bottom-color: #ffffff;
-        }
-
         .links-hero {
             min-height: 100vh;
             display: flex;
@@ -95,11 +68,28 @@
             margin-bottom: 30px;
         }
 
-        .band-photo {
-            max-width: 500px;
-            width: 100%;
+        .nav-buttons {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+            justify-content: center;
             margin-bottom: 50px;
-            border: 1px solid #1a1a1a;
+        }
+
+        .nav-button {
+            font-size: 11px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #999;
+            padding-bottom: 4px;
+            border-bottom: 1px solid transparent;
+            transition: color 0.3s, border-color 0.3s;
+        }
+
+        .nav-button:hover {
+            color: #ffffff;
+            border-bottom-color: #ffffff;
+            text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
         }
 
         .links-grid {
@@ -124,6 +114,7 @@
         .link-tile:hover {
             border-color: #ffffff;
             background: rgba(20, 20, 20, 0.8);
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
         }
 
         .link-icon {
@@ -146,10 +137,11 @@
 
         .link-text {
             font-size: 13px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: #e0e0e0;
-            font-weight: 700;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
         }
 
         .section-divider {
@@ -159,9 +151,11 @@
 
         .section-label {
             font-size: 14px;
-            letter-spacing: 3px;
+            letter-spacing: 1px;
             text-transform: uppercase;
             color: #555;
+            font-family: 'Times New Roman', Times, serif;
+            font-weight: 400;
         }
 
         .signup-section {
@@ -172,10 +166,12 @@
 
         .signup-title {
             font-size: 24px;
-            font-weight: 700;
+            font-weight: 400;
             color: #ffffff;
             margin-bottom: 15px;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
+            font-family: 'Times New Roman', Times, serif;
+            text-transform: uppercase;
         }
 
         .signup-subtitle {
@@ -222,10 +218,10 @@
             background: transparent;
             border: 1px solid #ffffff;
             color: #ffffff;
-            font-family: 'Space Mono', monospace;
+            font-family: 'Times New Roman', Times, serif;
             font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 3px;
+            font-weight: 400;
+            letter-spacing: 1px;
             text-transform: uppercase;
             cursor: pointer;
             transition: all 0.3s;
@@ -234,6 +230,7 @@
         .signup-form button:hover {
             background: #ffffff;
             color: #000000;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
         }
 
         .signup-message {
@@ -285,101 +282,9 @@
 
         .copyright {
             font-size: 11px;
-            color: #333;
-        }
-
-        /* ── Hamburger Menu (Mobile Only) ── */
-        .menu-toggle {
-            position: fixed;
-            top: 30px;
-            left: 30px;
-            width: 40px;
-            height: 40px;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            z-index: 2000;
-            padding: 0;
-            display: none;
-            flex-direction: column;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .menu-toggle span {
-            display: block;
-            width: 100%;
-            height: 0;
-            background: transparent;
-            border-top: 2px solid #ffffff;
-            opacity: 0.8;
-            transition: all 0.3s;
-        }
-
-        .menu-toggle.active span {
-            opacity: 1;
-        }
-
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(8px) rotate(45deg);
-        }
-
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-8px) rotate(-45deg);
-        }
-
-        .menu-overlay {
-            position: fixed;
-            inset: 0;
-            background: rgba(10, 10, 10, 0.98);
-            z-index: 1500;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.4s;
-        }
-
-        .menu-overlay.active {
-            opacity: 1;
-            pointer-events: all;
-        }
-
-        .menu-nav {
-            text-align: center;
-        }
-
-        .menu-nav a {
-            display: block;
-            font-size: 15px;
-            font-weight: 400;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: #666;
-            margin: 30px 0;
-            transition: color 0.3s;
-        }
-
-        .menu-nav a:hover {
-            color: #ffffff;
         }
 
         @media (max-width: 600px) {
-            .main-nav {
-                display: none;
-            }
-
-            .menu-toggle {
-                display: flex;
-                top: 20px;
-                left: 20px;
-            }
-
             .container {
                 padding: 0 25px;
             }
@@ -392,8 +297,10 @@
                 max-width: 280px;
             }
 
-            .band-photo {
-                max-width: 100%;
+            .nav-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 20px;
             }
 
             .link-tile {
@@ -429,37 +336,17 @@
 </head>
 <body>
 
-    <!-- Hamburger Menu Toggle (Mobile Only) -->
-    <button class="menu-toggle" id="menu-toggle" aria-label="Menu">
-        <span></span>
-        <span></span>
-        <span></span>
-    </button>
-
-    <!-- Menu Overlay (Mobile Only) -->
-    <div class="menu-overlay" id="menu-overlay">
-        <nav class="menu-nav">
-            <a href="index.html" class="menu-link">Home</a>
-            <a href="live.html" class="menu-link">Live</a>
-            <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="menu-link">Merch</a>
-            <a href="links.html" class="menu-link">Links</a>
-            <a href="mailto:info@dreamstosell.net" class="menu-link">Contact</a> 
-        </nav>
-    </div>
-
-    <nav class="main-nav">
-        <a href="index.html">Home</a>
-        <a href="music.html">Music</a>
-        <a href="live.html">Live</a>
-        <a href="https://dreamstosell.bigcartel.com/" target="_blank">Merch</a>
-        <a href="links.html">Links</a>
-        <a href="mailto:info@dreamstosell.net">Contact</a>
-    </nav>
-
     <section class="links-hero">
         <div class="container">
             <img src="https://i.imgur.com/aC63kjB.png" alt="Dreams to Sell" class="logo">
-            <img src="/images/Band1.JPG" alt="Dreams to Sell Band" class="band-photo">
+            
+            <div class="nav-buttons">
+                <a href="index.html" class="nav-button">Home</a>
+                <a href="index.html#music" class="nav-button">Music</a>
+                <a href="index.html#live" class="nav-button">Live</a>
+                <a href="https://dreamstosell.bigcartel.com/" target="_blank" class="nav-button">Merch</a>
+                <a href="mailto:info@dreamstosell.net" class="nav-button">Contact</a>
+            </div>
             
             <div class="links-grid">
                 <!-- Listen Section -->
@@ -558,7 +445,7 @@
                     <p class="section-label">Quick Links</p>
                 </div>
 
-                <a href="live.html" class="link-tile">
+                <a href="index.html#live" class="link-tile">
                     <div class="link-icon">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512">
                             <path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM144 256a144 144 0 1 1 288 0 144 144 0 1 1 -288 0zm144-64c0 35.3-28.7 64-64 64c-7.1 0-13.9-1.2-20.3-3.3c-5.5-1.8-11.9 1.6-11.7 7.4c.3 6.9 1.3 13.8 3.2 20.7c13.7 51.2 66.4 81.6 117.6 67.9s81.6-66.4 67.9-117.6c-11.1-41.5-47.8-69.4-88.6-71.1c-5.8-.2-9.2 6.1-7.4 11.7c2.1 6.4 3.3 13.2 3.3 20.3z"/>
@@ -649,32 +536,6 @@
     </footer>
 
     <script>
-        // Hamburger Menu Toggle
-        const menuToggle = document.getElementById('menu-toggle');
-        const menuOverlay = document.getElementById('menu-overlay');
-        const menuLinks = document.querySelectorAll('.menu-link');
-
-        if (menuToggle) {
-            menuToggle.addEventListener('click', function() {
-                menuToggle.classList.toggle('active');
-                menuOverlay.classList.toggle('active');
-            });
-
-            menuLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    menuToggle.classList.remove('active');
-                    menuOverlay.classList.remove('active');
-                });
-            });
-
-            menuOverlay.addEventListener('click', function(e) {
-                if (e.target === menuOverlay) {
-                    menuToggle.classList.remove('active');
-                    menuOverlay.classList.remove('active');
-                }
-            });
-        }
-
         // Email Signup
         document.getElementById('signup-form').addEventListener('submit', async function(e) {
             e.preventDefault();
